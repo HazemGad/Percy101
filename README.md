@@ -1,20 +1,35 @@
 Workflow :-
 --
-First Run (Baseline)
-Run Percy on your Storybook for the first time.
-Percy stores these screenshots as your baseline.
-Make Changes
-Update component styles or structure.
-Second Run
-Run Percy again.
-Percy compares the new screenshots to the baseline.
-Review
-In Percy dashboard:
-Green highlight = added pixels
-Red highlight = removed pixels
-Approve or Reject
-If the change was intended → click Approve → new baseline is saved.
-If unintended → reject and fix the code.
+
+-First Run (Baseline)
+
+-Run Percy on your Storybook for the first time.
+
+-Percy stores these screenshots as your baseline.
+
+-Make Changes
+
+-Update component styles or structure.
+
+-Second Run
+
+-Run Percy again.
+
+-Percy compares the new screenshots to the baseline.
+
+-Review
+
+-In Percy dashboard:
+
+-Green highlight = added pixels
+
+-Red highlight = removed pixels
+
+-Approve or Reject
+
+-If the change was intended → click Approve → new baseline is saved.
+
+-If unintended → reject and fix the code.
 
 
 --
@@ -98,8 +113,11 @@ Test dynamic pages in staging environments
 Test production pages directly
 
 How to Test a Full Page by URL :-
+
 for example:
+
 npx percy snapshot http://localhost:3000/home
+
 npx percy snapshot http://localhost:3000/login
 
 When to Use This :
