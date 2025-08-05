@@ -1,3 +1,53 @@
+Overview
+--
+Percy is a visual testing tool that captures screenshots of your components or pages, compares them to a baseline, and highlights any visual differences.
+It integrates with Storybook, CI/CD pipelines, and design tools like Figma to ensure your UI stays consistent over time.
+
+
+
+
+Getting Started
+--
+1. Install dependencies
+
+npm install --save-dev @percy/cli @percy/storybook
+
+2. Create a Percy account
+   
+Go to https://percy.io → Sign up
+
+Create a new project
+
+Choose Storybook as the integration type
+
+Copy the generated PERCY_TOKEN
+
+3. Set your Percy token
+ 
+On Windows CMD:
+set PERCY_TOKEN=your-token-here
+
+On Windows PowerShell:
+
+$Env:PERCY_TOKEN="your-token-here"
+
+On Mac/Linux:
+
+export PERCY_TOKEN=your-token-here
+
+4. Run Storybook
+
+npm run storybook
+
+5. Run Percy
+   
+With Storybook running at http://localhost:6006:
+
+
+npx percy storybook http://localhost:6006
+
+
+
 Workflow :-
 --
 
@@ -32,7 +82,7 @@ Workflow :-
 -If unintended → reject and fix the code.
 
 
---
+
 Integration with Storybook :-
 --
 Percy automatically:
@@ -45,7 +95,7 @@ Percy automatically:
 
  Tip: Keep your Storybook organized with clear story names for better Percy reports.
 
---
+
  Integration with Figma :-
 --
 Percy doesn’t directly “pull” designs from Figma, but it works alongside it:
@@ -59,7 +109,7 @@ Percy doesn’t directly “pull” designs from Figma, but it works alongside i
 4-If a Figma update changes design, update the component → Percy will catch the change → approve it as new baseline.
 
 
---
+
 Advantages :-
 --
 
@@ -75,7 +125,7 @@ CI/CD Ready – Can run in pipelines to block unintended changes.
 
 Integrates with Design Workflow – Works alongside Figma.
 
---
+
 Disadvantages :-
 --
 
@@ -88,18 +138,7 @@ Needs good Storybook coverage – If a state isn’t in Storybook, it won’t be
 Limited offline use – Requires internet to upload screenshots.
 
 
---
-Commands :-
---
-first run (Baseline)
 
-npm run storybook
-npx percy storybook "(your url)"
-
-after making a change:
-npx percy storybook "(your url)"
-
---
 Testing Full Pages by URL :-
 --
 Unlike Chromatic (which only tests isolated components inside Storybook), Percy can also test full web pages — even without Storybook.
