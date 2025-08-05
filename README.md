@@ -77,8 +77,34 @@ Limited offline use – Requires internet to upload screenshots.
 Commands :-
 --
 first run (Baseline)
+
 npm run storybook
-npx percy storybook http://localhost:6006
+npx percy storybook "(your url)"
 
 after making a change:
 npx percy storybook "(your url)"
+
+--
+Testing Full Pages by URL :-
+--
+Unlike Chromatic (which only tests isolated components inside Storybook), Percy can also test full web pages — even without Storybook.
+
+This means you can:
+
+Test entire pages like /home, /login, /dashboard
+
+Test dynamic pages in staging environments
+
+Test production pages directly
+
+How to Test a Full Page by URL :-
+for example:
+npx percy snapshot http://localhost:3000/home
+npx percy snapshot http://localhost:3000/login
+
+When to Use This :
+If you have end-to-end flows (not just components)
+
+If you want to visually test how components look together in layout
+
+If you need to verify final styling after backend data loads
